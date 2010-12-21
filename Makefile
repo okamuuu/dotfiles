@@ -8,7 +8,7 @@ $(HOME)/.vim:
     ln -sf `pwd`/vim $(HOME)/.vim
 
 $(HOME)/.vim/autoload:
-    ln -sf `pwd`/vim/bundle/vim-pathogen/autoload $(HOME)/.vim/autoload
+    ln -sf `pwd`/vim/bundle/vim-pathogen/autoload/ $(HOME)/.vim/autoload
 
 
 
