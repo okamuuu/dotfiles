@@ -1,0 +1,6 @@
+[submodule "vim/bundle/vim-pathogen"]
+	path = vim/bundle/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git
+[submodule "vim/bundle/xslate-vim"]
+	path = vim/bundle/xslate-vim
+	url = git://github.com/motemen/xslate-vim.git
