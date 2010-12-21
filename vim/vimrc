@@ -1,0 +1,87 @@
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+filetype on
+
+syntax enable
+
+" 編集中のファイル名を表示
+" 画面の左側に常時''行番''を表示する。
+" ルーラーを表示する。
+set title
+set number
+set ruler
+
+
+" カーソル行をハイライト
+set cursorline
+
+" カレントウィンドウにのみ罫線を引く
+augroup cch
+  autocmd! cch
+  autocmd WinLeave * set nocursorline
+  autocmd WinEnter,BufRead * set cursorline
+augroup END
+
+:hi clear CursorLine
+:hi CursorLine gui=underline
+highlight CursorLine ctermbg=black guibg=black
+
+"Escの2回押しでハイライト消去
+"nmap <ESC><ESC> ;nohlsearch<CR><ESC>
+
+" タブの見掛けの表示幅を4文字分にする。
+" オートインデント時に使用するインデントの深さも4文字分にする。
+" 自身がタブを入力時した際に、タブの代わりに4文字の半角スペースに置き換える
+set tabstop=4
+set shiftwidth=4 
+set softtabstop=4
+
+
+" タブが挿入された文章を編集する場合、タブの代わりに半角スペースに置き換えるようにする。
+" 行頭の余白内でTabを打ち込むと'shiftwidth'の数だけインデントする。
+set expandtab
+set smarttab
+
+" インクリメンタルサーチ
+set incsearch
+
+" 対括弧の表示
+" モード表示
+set showmatch
+set showmode
+
+" 全角スペースを視覚化する
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=whilte
+match ZenkakuSpace /＿/
+
+" insert mode ではキーバインドをEmacs スタイルにする。
+" Ctrl+Aで行頭へ移動
+" Ctrl＋Bで一文字戻る
+" Ctrl+Dでカーソルの下の文字を削除
+" Ctrl+Eで行末へ移動
+" Ctrl+Fで一文字進む
+:inoremap <C-A> <Home>
+:inoremap <C-B> <Left>
+:inoremap <C-D> <Del>
+:inoremap <C-E> <End>
+:inoremap <C-F> <Right>
+
+" コマンドエイリアス
+:noremap ,pl   :!perl %<CR>
+:noremap ,plcw :!perl -cw %<CR>
+:noremap ,t    :!prove -vl %<CR>
+:noremap ,pt   :%!perltidy %<CR>
+:noremap ,ptv  :! perltidy<CR>
+
+" 日時の入力補助
+:inoremap <expr> ,df strftime('%Y-%m-%dT%H:%M:%S')
+:inoremap <expr> ,dd strftime('%Y-%m-%d')
+:inoremap <expr> ,dt strftime('%H:%M:%S')
+
+" コロンを識別子の有効な一部として認識させる
+set iskeyword+=:
+
+" コメントを見やすい色へ変更
+hi Comment cterm=bold ctermbg=black
+
