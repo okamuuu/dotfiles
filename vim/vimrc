@@ -110,3 +110,10 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " AutoComplPop like behavior.
 "let g:neocomplcache_enable_auto_select = 1
+
+" eregex.vim
+nnoremap / :M/
+nnoremap ? :M?
+nnoremap ,/ /
+nnoremap ,? ?
+

@@ -13,3 +13,12 @@
 [submodule "vim/bundle/neocomplcache"]
 	path = vim/bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache.git
+[submodule "vim/bundle/eregex.vim"]
+	path = vim/bundle/eregex.vim
+	url = https://github.com/othree/eregex.vim.git
+[submodule "vim/bundle/html5-syntax.vim"]
+	path = vim/bundle/html5-syntax.vim
+	url = https://github.com/othree/html5-syntax.vim.git
+[submodule "vim/bundle/hatena-vim"]
+	path = vim/bundle/hatena-vim
+	url = https://github.com/motemen/hatena-vim.git
