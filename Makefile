@@ -1,5 +1,6 @@
 setup: $(HOME)/.vimrc \
        $(HOME)/.vim \
+       $(HOME)/.vim/autoload \
        $(HOME)/.zshr \
        $(HOME)/.screenrc
 
