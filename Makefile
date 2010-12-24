@@ -1,5 +1,7 @@
 setup: $(HOME)/.vimrc \
        $(HOME)/.vim \
+       $(HOME)/.zshr \
+       $(HOME)/.screenrc
 
 $(HOME)/.vimrc:
     ln -sf `pwd`/vim/vimrc $(HOME)/.vimrc
