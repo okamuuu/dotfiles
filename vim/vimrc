@@ -52,7 +52,7 @@ set showmatch
 set showmode
 
 " 全角スペースを視覚化する
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=whilte
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
 match ZenkakuSpace /＿/
 
 " insert mode ではキーバインドをEmacs スタイルにする。

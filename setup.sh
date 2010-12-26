@@ -2,8 +2,8 @@ cd $HOME/project/dotfiles
 
 ln -sf `pwd`/vim/vimrc $HOME/.vimrc
 
-mkdir -p $HOME/.vim/autoload
-ln -sf `pwd`/vim/bundle/vim-pathogen/autoload/pathogen.vim $HOME/.vim/autoload/pathogen.vim
+ln -sf `pwd`/vim/bundle/ $HOME/.vim/bundle
+ln -sf `pwd`/vim/bundle/vim-pathogen/autoload/ $HOME/.vim/autoload
 
 touch $HOME/.zshrc_custom
 ln -sf `pwd`/zsh/zshrc $HOME/.zshrc
