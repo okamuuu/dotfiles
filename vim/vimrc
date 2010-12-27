@@ -12,31 +12,12 @@ set title
 set number
 set ruler
 
-
-" カーソル行をハイライト
-set cursorline
-
-" カレントウィンドウにのみ罫線を引く
-augroup cch
-  autocmd! cch
-  autocmd WinLeave * set nocursorline
-  autocmd WinEnter,BufRead * set cursorline
-augroup END
-
-:hi clear CursorLine
-:hi CursorLine gui=underline
-highlight CursorLine ctermbg=black guibg=black
-
-"Escの2回押しでハイライト消去
-"nmap <ESC><ESC> ;nohlsearch<CR><ESC>
-
 " タブの見掛けの表示幅を4文字分にする。
 " オートインデント時に使用するインデントの深さも4文字分にする。
 " 自身がタブを入力時した際に、タブの代わりに4文字の半角スペースに置き換える
 set tabstop=4
 set shiftwidth=4 
 set softtabstop=4
-
 
 " タブが挿入された文章を編集する場合、タブの代わりに半角スペースに置き換えるようにする。
 " 行頭の余白内でTabを打ち込むと'shiftwidth'の数だけインデントする。
@@ -53,7 +34,7 @@ set showmode
 
 " 全角スペースを視覚化する
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
-match ZenkakuSpace /＿/
+match ZenkakuSpace /　/
 
 " insert mode ではキーバインドをEmacs スタイルにする。
 " Ctrl+Aで行頭へ移動
