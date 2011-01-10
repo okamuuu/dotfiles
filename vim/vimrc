@@ -73,3 +73,19 @@ nnoremap ? :M?
 nnoremap ,/ /
 nnoremap ,? ?
 
+" vim2mkd 
+" http://archiva.jp/web/tool/vim2mkd.html
+nnoremap ,mk :call DisplayMarkdown()<CR>
+function! DisplayMarkdown()
+    ! markdown.pl --html4tags "%" > /tmp/__markdown.html;
+    vert diffsplit /tmp/__markdown.html
+    highlight DiffChange guibg=grey0
+    highlight DiffAdd    guibg=grey0
+    highlight DiffText   gui=NONE, guibg=grey0
+    highlight DiffDelete guibg=grey0
+    call cursor(1,1)
+"    %diffput
+"    wincmd c
+"    set ft=html
+"    diffoff<CR>
+endfunction
