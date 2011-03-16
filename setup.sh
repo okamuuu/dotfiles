@@ -1,6 +1,7 @@
 cd $HOME/project/dotfiles
 
 mkdir $HOME/.ssh
+mkdir $HOME/.vim
 ln -sf `pwd`/vim/vimrc $HOME/.vimrc
 
 ln -sf `pwd`/vim/bundle/ $HOME/.vim/bundle
