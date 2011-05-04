@@ -1,21 +1,3 @@
-[submodule "vim/bundle/vim-pathogen"]
-	path = vim/bundle/vim-pathogen
-	url = git://github.com/tpope/vim-pathogen.git
-[submodule "vim/bundle/xslate-vim"]
-	path = vim/bundle/xslate-vim
-	url = git://github.com/motemen/xslate-vim.git
-[submodule "vim/bundle/vim-ref"]
-	path = vim/bundle/vim-ref
-	url = https://github.com/thinca/vim-ref.git
-[submodule "vim/bundle/unite"]
-	path = vim/bundle/unite
-	url = https://github.com/Shougo/unite.vim.git
-[submodule "vim/bundle/neocomplcache"]
-	path = vim/bundle/neocomplcache
-	url = https://github.com/Shougo/neocomplcache.git
-[submodule "vim/bundle/eregex.vim"]
-	path = vim/bundle/eregex.vim
-	url = https://github.com/othree/eregex.vim.git
-[submodule "vim/bundle/html5-syntax.vim"]
-	path = vim/bundle/html5-syntax.vim
-	url = https://github.com/othree/html5-syntax.vim.git
+[submodule "vim/vundle"]
+	path = vim/vundle
+	url = git://github.com/gmarik/vundle.git

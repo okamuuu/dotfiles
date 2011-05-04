@@ -1,8 +1,13 @@
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-filetype on
+set nocompatible               " be iMproved
+filetype off                   " required!
 
+set rtp+=~/project/dotfiles/vim/vundle/ 
+call vundle#rc()
+
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'motemen/xslate-vim'
+
+filetype plugin indent on     " required!
 syntax enable
 
 " 編集中のファイル名を表示
