@@ -78,7 +78,7 @@ screen*|ansi*)
     }
     precmd() {
         #printf "\eP\e]0;~$(basename $(pwd))\a\e\\"
-        printf "\ek~$(basename $(pwd))\e\\"
+        printf "\ek~$(basename)\e\\"
     }
     ;;
 esac
