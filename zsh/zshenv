@@ -65,6 +65,25 @@ setopt auto_param_slash
 
 autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
 
+#for screen hard status
+case "${TERM}" in
+kterm*|xterm*)
+    precmd() {
+        printf "\e]0;${USER}@${HOST%%.*}:${PWD}\a"
+    }
+    ;;
+screen*|ansi*)
+    preexec() {
+        printf "\ek!$1\e\\"
+    }
+    precmd() {
+        #printf "\eP\e]0;~$(basename $(pwd))\a\e\\"
+        printf "\ek~$(basename $(pwd))\e\\"
+    }
+    ;;
+esac
+
+
 function rprompt-git-current-branch {
         local name st color gitdir action
         if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
