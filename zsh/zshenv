@@ -75,12 +75,14 @@ kterm*|xterm*)
 screen*|ansi*)
     preexec() {
         local -a cmd; cmd=(${(z)2})
-        printf "\ek$(basename $cmd[2])\e\\"
-        #printf "\ek!$1\e\\"
+        if test $cmd[2]; then
+            printf "\ek$(basename $cmd[2])\e\\"
+            #printf "\ek!$1\e\\"
+        fi
     }
     precmd() {
         #printf "\eP\e]0;~$(basename $(pwd))\a\e\\"
-        printf "\ek~$(basename $(pwd))\e\\"
+        printf "\ek$(basename $(pwd))\e\\"
     }
     ;;
 esac
