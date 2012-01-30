@@ -6,7 +6,8 @@ ln -sf `pwd`/vim/vimrc $HOME/.vimrc
 
 git submodule init
 git submodule update    
-#ln -sf `pwd`/vim/bundle/ $HOME/.vim/bundle
+
+ln -sf `pwd`/vim/bundle/ $HOME/.vim/bundle
 #ln -sf `pwd`/vim/bundle/vim-pathogen/autoload/ $HOME/.vim/autoload
 
 touch $HOME/.zshrc_custom
