@@ -1,0 +1,95 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/project/dotfiles/vim/vundle/ 
+call vundle#rc()
+
+Bundle 'othree/html5.vim'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'motemen/xslate-vim'
+Bundle 'vim-scripts/jsbeautify'
+Bundle 'vim-scripts/JavaScript-Indent'
+Bundle 'hallettj/jslint.vim'
+
+filetype plugin indent on     " required!
+syntax enable
+
+" Don't make a backup before overwriting a file.
+set nobackup                      
+set nowritebackup                 
+
+" Keep swap files in one location
+set directory=$HOME/.vim/tmp//,.  
+
+" 編集中のファイル名を表示
+" 画面の左側に常時''行番''を表示する。
+" ルーラーを表示する。
+set title
+set number
+set ruler
+
+" タブの見掛けの表示幅を4文字分にする。
+" オートインデント時に使用するインデントの深さも4文字分にする。
+" 自身がタブを入力時した際に、タブの代わりに4文字の半角スペースに置き換える
+set tabstop=4
+set shiftwidth=4 
+set softtabstop=4
+
+" タブが挿入された文章を編集する場合、タブの代わりに半角スペースに置き換えるようにする。
+" 行頭の余白内でTabを打ち込むと'shiftwidth'の数だけインデントする。
+set expandtab
+set smarttab
+
+" インクリメンタルサーチ
+set incsearch
+
+" 対括弧の表示
+" モード表示
+set showmatch
+set showmode
+
+" 全角スペースを視覚化する
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
+match ZenkakuSpace /　/
+
+" insert mode ではキーバインドをEmacs スタイルにする。
+" Ctrl+Aで行頭へ移動
+" Ctrl＋Bで一文字戻る
+" Ctrl+Dでカーソルの下の文字を削除
+" Ctrl+Eで行末へ移動
+" Ctrl+Fで一文字進む
+:inoremap <C-A> <Home>
+:inoremap <C-B> <Left>
+:inoremap <C-D> <Del>
+:inoremap <C-E> <End>
+:inoremap <C-F> <Right>
+
+" コマンドエイリアス
+:noremap ,t    :!prove -vl %<CR>
+:noremap ,pt   :%!perltidy %<CR>
+:noremap ,ptv  :! perltidy<CR>
+:noremap ,fx   :! open -a "FireFox" %<CR>
+
+" 日時の入力補助
+:inoremap <expr> ,df strftime('%Y-%m-%dT%H:%M:%S')
+:inoremap <expr> ,dd strftime('%Y-%m-%d')
+:inoremap <expr> ,dt strftime('%H:%M:%S')
+
+" コロンを識別子の有効な一部として認識させる
+set iskeyword+=:
+
+" コメントを見やすい色へ変更
+hi Comment cterm=bold ctermbg=black
+
+"neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
+" eregex.vim
+" nnoremap / :M/
+" nnoremap ? :M?
+" nnoremap ,/ /
+" nnoremap ,? ?
+
+" http://d.hatena.ne.jp/eller/20110914
+let $JS_CMD='node'
+

@@ -78,8 +78,8 @@ screen*|ansi*)
     preexec() {
         local -a cmd; cmd=(${(z)2})
         if test $cmd[2]; then
-            printf "\ek$(basename $cmd[2])\e\\"
-            #printf "\ek!$1\e\\"
+#            printf "\ek$(basename $cmd[2])\e\\"
+            printf "\ek!$1\e\\"
         fi
     }
     precmd() {
