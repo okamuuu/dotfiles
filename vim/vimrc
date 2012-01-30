@@ -4,9 +4,35 @@ filetype off                   " required!
 set rtp+=~/project/dotfiles/vim/vundle/ 
 call vundle#rc()
 
+" Edit
+Bundle 'Smooth-Scroll'
+Bundle 'scrooloose/nerdcommenter.git'
+
+" Syntax
+Bundle 'JavaScript-syntax'
+Bundle 'jQuery'
+Bundle 'nginx.vim'
+Bundle 'tpope/vim-markdown'
 Bundle 'othree/html5.vim'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'motemen/xslate-vim'
+Bundle 'scrooloose/syntastic'
+
+Bundle 'vim-scripts/Align'
+Bundle 'vim-scripts/jsbeautify'
+Bundle 'basyura/jslint.vim'
+
+" jslint.vim
+function! s:javascript_filetype_settings()
+  autocmd BufLeave     <buffer> call jslint#clear()
+  autocmd BufWritePost <buffer> call jslint#check()
+  autocmd CursorMoved  <buffer> call jslint#message()
+endfunction
+autocmd FileType javascript call s:javascript_filetype_settings()
+
+
+
+let $JS_CMD='node'
 
 filetype plugin indent on     " required!
 syntax enable
@@ -80,3 +106,4 @@ let g:neocomplcache_enable_at_startup = 1
 " nnoremap ,/ /
 " nnoremap ,? ?
 
+autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
