@@ -101,10 +101,11 @@ match ZenkakuSpace /　/
 :inoremap <C-F> <Right>
 
 " コマンドエイリアス
-:noremap ,t    :!prove -vl %<CR>
-:noremap ,pt   :%!perltidy %<CR>
-:noremap ,ptv  :! perltidy<CR>
-:noremap ,fx   :! open -a "FireFox" %<CR>
+:noremap ,lt :! csslint %<CR>
+:noremap ,t :! prove -vl %<CR>
+:noremap ,pt :! perltidy <CR>
+:noremap ,ptv :%! perltidy <CR>
+:noremap ,fx :! open -a "FireFox" %<CR>
 
 " 日時の入力補助
 :inoremap <expr> ,df strftime('%Y-%m-%dT%H:%M:%S')
