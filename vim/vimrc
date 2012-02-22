@@ -19,7 +19,7 @@ endif
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
+" NeoBundle 'Shougo/vimproc'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle 'ujihisa/unite-locate'
 NeoBundle 'violetyk/cake.vim'
@@ -42,6 +42,7 @@ NeoBundle 'mattn/unite-advent_calendar'
 NeoBundle 'open-browser.vim'
 NeoBundle 'ctrlp.vim'
 NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'basyura/jslint.vim'
 
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
@@ -131,6 +132,16 @@ let g:neocomplcache_min_syntax_length = 3
 " nnoremap ,/ /
 " nnoremap ,? ?
 
-" http://d.hatena.ne.jp/eller/20110914
-let $JS_CMD='node'
+" jslint.vim
+augroup MyGroup
+  autocmd! MyGroup
+  autocmd FileType javascript call s:javascript_filetype_settings()
+augroup END 
+
+function! s:javascript_filetype_settings()
+  autocmd BufLeave     <buffer> call jslint#clear()
+  autocmd BufWritePost <buffer> call jslint#check()
+  autocmd CursorMoved  <buffer> call jslint#message()
+endfunction
+
 
