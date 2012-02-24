@@ -44,6 +44,9 @@ NeoBundle 'ctrlp.vim'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'basyura/jslint.vim'
 
+" Syntax
+NeoBundle 'jade.vim'
+
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
