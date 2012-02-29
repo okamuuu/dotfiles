@@ -43,7 +43,7 @@ NeoBundle 'open-browser.vim'
 NeoBundle 'ctrlp.vim'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'basyura/jslint.vim'
-
+NeoBundle 'bigfish/vim-js-beautify'
 " Syntax
 NeoBundle 'jade.vim'
 
@@ -110,6 +110,7 @@ match ZenkakuSpace /　/
 :noremap ,pt :! perltidy <CR>
 :noremap ,ptv :%! perltidy <CR>
 :noremap ,fx :! open -a "FireFox" %<CR>
+"nmap <leader>b :JSBeautify<cr>
 
 " 日時の入力補助
 :inoremap <expr> ,df strftime('%Y-%m-%dT%H:%M:%S')
