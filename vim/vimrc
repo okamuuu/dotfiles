@@ -44,6 +44,8 @@ NeoBundle 'ctrlp.vim'
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'basyura/jslint.vim'
 NeoBundle 'bigfish/vim-js-beautify'
+NeoBundle 'vim-scripts/yanktmp.vim'
+
 " Syntax
 NeoBundle 'jade.vim'
 
@@ -151,4 +153,7 @@ function! s:javascript_filetype_settings()
   autocmd CursorMoved  <buffer> call jslint#message()
 endfunction
 
-
+" Yanktmp 
+map <silent> sy :call YanktmpYank()<CR>
+map <silent> sp :call YanktmpPaste_p()<CR>
+map <silent> sP :call YanktmpPaste_P()<CR>
