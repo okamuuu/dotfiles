@@ -22,7 +22,7 @@ NeoBundle 'Shougo/unite.vim'
 " NeoBundle 'Shougo/vimproc'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle 'ujihisa/unite-locate'
-NeoBundle 'violetyk/cake.vim'
+" NeoBundle 'violetyk/cake.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'taglist.vim'
 NeoBundle 'ZenCoding.vim'
@@ -42,7 +42,8 @@ NeoBundle 'mattn/unite-advent_calendar'
 NeoBundle 'open-browser.vim'
 NeoBundle 'ctrlp.vim'
 NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'basyura/jslint.vim'
+" NeoBundle 'basyura/jslint.vim'
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'bigfish/vim-js-beautify'
 NeoBundle 'vim-scripts/yanktmp.vim'
 
@@ -110,7 +111,7 @@ match ZenkakuSpace /　/
 :inoremap <C-F> <Right>
 
 " コマンドエイリアス
-:noremap ,lt :! csslint %<CR>
+:noremap ,h :! jshint %<CR>
 :noremap ,t :! prove -vl %<CR>
 :noremap ,pt :! perltidy <CR>
 :noremap ,ptv :%! perltidy <CR>
@@ -142,18 +143,26 @@ let g:neocomplcache_min_syntax_length = 3
 " nnoremap ,? ?
 
 " jslint.vim
-augroup MyGroup
-  autocmd! MyGroup
-  autocmd FileType javascript call s:javascript_filetype_settings()
-augroup END 
-
-function! s:javascript_filetype_settings()
-  autocmd BufLeave     <buffer> call jslint#clear()
-  autocmd BufWritePost <buffer> call jslint#check()
-  autocmd CursorMoved  <buffer> call jslint#message()
-endfunction
+" augroup MyGroup
+"   autocmd! MyGroup
+"   autocmd FileType javascript call s:javascript_filetype_settings()
+" augroup END 
+" 
+" function! s:javascript_filetype_settings()
+"   autocmd BufLeave     <buffer> call jslint#clear()
+"   autocmd BufWritePost <buffer> call jslint#check()
+"   autocmd CursorMoved  <buffer> call jslint#message()
+" endfunction
 
 " Yanktmp 
 map <silent> sy :call YanktmpYank()<CR>
 map <silent> sp :call YanktmpPaste_p()<CR>
 map <silent> sP :call YanktmpPaste_P()<CR>
+
+" syntastic {{{
+let g:syntastic_mode_map = {
+      \  'mode': 'active',
+      \ 'active_filetypes': ['ruby', 'javascript'],
+      \ 'passive_filetypes': []
+      \ }
+" }}}
