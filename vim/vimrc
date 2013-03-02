@@ -1,20 +1,20 @@
 set nocompatible               " be iMproved
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  set runtimepath+=~/.vim/neobundle.vim/
 endif
   
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-if has('mac')
-  "set langmenu=japanese
-  if exists('$LANG') && $LANG ==# 'ja_JP.UTF-8'
-    set langmenu=ja_ja.utf-8.macvim
-    set encoding=utf-8
-    set ambiwidth=double
-  endif
-endif
-
+"if has('mac')
+"  "set langmenu=japanese
+"  if exists('$LANG') && $LANG ==# 'ja_JP.UTF-8'
+"    set langmenu=ja_ja.utf-8.macvim
+"    set encoding=utf-8
+"    set ambiwidth=double
+"  endif
+"endif
+"
 filetype plugin indent off
 
 " Let NeoBundle manage NeoBundle
@@ -39,9 +39,16 @@ NeoBundle 'stephpy/vim-php-cs-fixer'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
-NeoBundleCheck
+filetype plugin indent on     " Required!
 
-filetype plugin indent on
+"
+" Brief help
+" :NeoBundleList          - list configured bundles
+" :NeoBundleInstall(!)    - install(update) bundles
+" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+" Installation check.
+NeoBundleCheck
 
 syntax enable
 
