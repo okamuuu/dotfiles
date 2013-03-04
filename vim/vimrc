@@ -1,13 +1,12 @@
-set nocompatible               " be iMproved
-
+set nocompatible
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
+call neobundle#rc(expand('~/.vim/bundle/'))
+
 if has('mac')
-  "set langmenu=japanese
   if exists('$LANG') && $LANG ==# 'ja_JP.UTF-8'
     set langmenu=ja_ja.utf-8.macvim
     set encoding=utf-8
@@ -23,45 +22,29 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 NeoBundle 'Shougo/vimproc'
+
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 
-"NeoBundle 'ujihisa/neco-look'
-"NeoBundle 'ujihisa/unite-locate'
-" NeoBundle 'violetyk/cake.vim'
-"NeoBundle 'tpope/vim-surround'
-"NeoBundle 'taglist.vim'
 NeoBundle 'ZenCoding.vim'
-"NeoBundle 'ref.vim'
-"NeoBundle 'The-NERD-tree'
-"NeoBundle 'The-NERD-Commenter'
-NeoBundle 'fugitive.vim'
-"NeoBundle 'TwitVim'
-"NeoBundle 'thinca/vim-quickrun'
-"NeoBundle 'thinca/vim-localrc'
-"NeoBundle 'dbext.vim'
-"NeoBundle 'rails.vim'
-NeoBundle 'Gist.vim'
-"NeoBundle 'motemen/hatena-vim'
-"NeoBundle 'mattn/webapi-vim'
-"NeoBundle 'mattn/unite-advent_calendar'
-"NeoBundle 'open-browser.vim'
-"NeoBundle 'ctrlp.vim'
-"NeoBundle 'jelera/vim-javascript-syntax'
+" NeoBundle 'jelera/vim-javascript-syntax'
 " NeoBundle 'basyura/jslint.vim'
-"NeoBundle 'scrooloose/syntastic'
-"NeoBundle 'bigfish/vim-js-beautify'
+" NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'bigfish/vim-js-beautify'
 NeoBundle 'vim-scripts/yanktmp.vim'
-
-" Syntax
-"NeoBundle 'jade.vim'
 
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
-NeoBundleCheck
-
 filetype plugin indent on
+
+" Brief help
+" :NeoBundleList          - list configured bundles
+" :NeoBundleInstall(!)    - install(update) bundles
+" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+" Installation check.
+NeoBundleCheck
 
 syntax enable
 
@@ -112,19 +95,19 @@ match ZenkakuSpace /　/
 " Ctrl+Dでカーソルの下の文字を削除
 " Ctrl+Eで行末へ移動
 " Ctrl+Fで一文字進む
-:inoremap <C-A> <Home>
-:inoremap <C-B> <Left>
-:inoremap <C-D> <Del>
-:inoremap <C-E> <End>
-:inoremap <C-F> <Right>
+inoremap <C-A> <Home>
+inoremap <C-B> <Left>
+inoremap <C-D> <Del>
+inoremap <C-E> <End>
+inoremap <C-F> <Right>
 
 " コマンドエイリアス
-:noremap ,h :! jshint %<CR>
-:noremap ,t :! prove -vl %<CR>
-:noremap ,pt :! perltidy <CR>
-:noremap ,ptv :%! perltidy <CR>
-:noremap ,fx :! open -a "FireFox" %<CR>
-"nmap <leader>b :JSBeautify<cr>
+" ^MはCtrl+v,Ctrl+m
+" noremap ,h :! jshint %
+" noremap ,t :! prove -vl %
+" noremap ,pt :! perltidy %
+" noremap ,ptv :%! perltidy
+" nmap <leader>b :JSBeautify
 
 " 日時の入力補助
 :inoremap <expr> ,df strftime('%Y-%m-%dT%H:%M:%S')
@@ -137,7 +120,7 @@ set iskeyword+=:
 " コメントを見やすい色へ変更
 hi Comment cterm=bold ctermbg=black
 
-"neocomplcache
+" neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_camel_case_completion = 0
 let g:neocomplcache_enable_smart_case = 1
@@ -163,24 +146,7 @@ let g:neocomplcache_min_syntax_length = 3
 " endfunction
 
 " Yanktmp 
-map <silent> sy :call YanktmpYank()<CR>
-map <silent> sp :call YanktmpPaste_p()<CR>
-map <silent> sP :call YanktmpPaste_P()<CR>
+map <silent> sy :call YanktmpYank()
+map <silent> sp :call YanktmpPaste_p()
+map <silent> sP :call YanktmpPaste_P()
 
-" php-cs-fixer
-let g:php_cs_fixer_path = "~/script/php-cs-fixer" " define the path to the php-cs-fixer.phar
-let g:php_cs_fixer_level = "all"                " which level ?
-let g:php_cs_fixer_config = "default"           " configuration
-let g:php_cs_fixer_php_path = "php"             " Path to PHP
-let g:php_cs_fixer_fixers_list = ""             " List of fixers
-let g:php_cs_fixer_enable_default_mapping = 1   " Enable the mapping by default (<leader>pcd)
-let g:php_cs_fixer_dry_run = 0                  " Call command with dry-run option
-let g:php_cs_fixer_verbose = 0                  " Return the output of command if 1, else an inline information.
-
-" syntastic {{{
-let g:syntastic_mode_map = {
-      \  'mode': 'active',
-      \ 'active_filetypes': ['ruby', 'javascript'],
-      \ 'passive_filetypes': []
-      \ }
-" }}}
