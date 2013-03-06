@@ -32,9 +32,12 @@ NeoBundle 'ZenCoding.vim'
 " NeoBundle 'scrooloose/syntastic'
 " NeoBundle 'bigfish/vim-js-beautify'
 NeoBundle 'vim-scripts/yanktmp.vim'
-
+NeoBundle 'git://github.com/airblade/vim-gitgutter.git'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
+
+" PHP
+NeoBundle 'bpearson/vim-phpcs'
 
 filetype plugin indent on
 
@@ -47,6 +50,8 @@ filetype plugin indent on
 NeoBundleCheck
 
 syntax enable
+
+let g:Vimphpcs_Standard='PSR1'
 
 " Don't make a backup before overwriting a file.
 set nobackup                      
