@@ -37,7 +37,7 @@ NeoBundle 'git://github.com/airblade/vim-gitgutter.git'
 NeoBundle 'altercation/vim-colors-solarized'
 
 " PHP
-NeoBundle 'bpearson/vim-phpcs'
+" NeoBundle 'bpearson/vim-phpcs'
 
 filetype plugin indent on
 
