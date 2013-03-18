@@ -1,7 +1,7 @@
 source "$HOME/.zshrc_custom"
 #source $HOME/project/dotfiles/zsh/hook.zshrc
 PATH=$HOME/script:$PATH
-PATH=/usr/local/bin:$PATH
+PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH
 
 export LANG="ja_JP.UTF-8"

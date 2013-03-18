@@ -53,6 +53,18 @@ syntax enable
 
 let g:Vimphpcs_Standard='PSR1'
 
+let g:php_cs_fixer_path = "~/project/php-qatools/bin/php-cs-fixer"        " define the path to the php-cs-fixer.phar
+let g:php_cs_fixer_level = "psr1"                " which level ?
+let g:php_cs_fixer_config = "default"           " configuration
+let g:php_cs_fixer_php_path = "php"             " Path to PHP
+let g:php_cs_fixer_fixers_list = ""             " List of fixers
+let g:php_cs_fixer_enable_default_mapping = 1   " Enable the mapping by default (<leader>pcd)
+let g:php_cs_fixer_dry_run = 0                  " Call command with dry-run option
+let g:php_cs_fixer_verbose = 0                  " Return the output of command if 1, else an inline information.
+
+" gitgutter
+let g:gitgutter_enabled = 0
+
 " Don't make a backup before overwriting a file.
 set nobackup                      
 set nowritebackup                 
@@ -110,8 +122,8 @@ inoremap <C-F> <Right>
 " ^MはCtrl+v,Ctrl+m
 " noremap ,h :! jshint %
 " noremap ,t :! prove -vl %
-" noremap ,pt :! perltidy %
-" noremap ,ptv :%! perltidy
+ noremap ,pt :!perltidy %
+ noremap ,ptv :%!perltidy
 " nmap <leader>b :JSBeautify
 
 " 日時の入力補助
@@ -155,3 +167,8 @@ map <silent> sy :call YanktmpYank()
 map <silent> sp :call YanktmpPaste_p()
 map <silent> sP :call YanktmpPaste_P()
 
+" Don't screw up folds when inserting text that might affect them, until
+" leaving insert mode. Foldmethod is local to the window. Protect against
+" screwing up folding when switching between windows.
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
