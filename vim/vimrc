@@ -42,7 +42,7 @@ NeoBundle 'airblade/vim-gitgutter.git'
 NeoBundle 'altercation/vim-colors-solarized'
 
 " PHP
-NeoBundle 'stephpy/vim-php-cs-fixer'
+" NeoBundle 'bpearson/vim-phpcs'
 
 filetype plugin indent on
 
