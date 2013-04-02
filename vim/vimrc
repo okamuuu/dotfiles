@@ -22,9 +22,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
 NeoBundle 'Shougo/vimproc'
-
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimshell'
+
+NeoBundle 'thinca/vim-quickrun'
+
+let g:quickrun_config = {}
+let g:quickrun_config['*'] = {'runner': 'vimproc'}
 
 NeoBundle 'ZenCoding.vim'
 " NeoBundle 'jelera/vim-javascript-syntax'
@@ -32,7 +37,7 @@ NeoBundle 'ZenCoding.vim'
 " NeoBundle 'scrooloose/syntastic'
 " NeoBundle 'bigfish/vim-js-beautify'
 NeoBundle 'vim-scripts/yanktmp.vim'
-NeoBundle 'git://github.com/airblade/vim-gitgutter.git'
+NeoBundle 'airblade/vim-gitgutter.git'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
@@ -172,3 +177,4 @@ map <silent> sP :call YanktmpPaste_P()
 " screwing up folding when switching between windows.
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+
