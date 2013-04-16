@@ -11,7 +11,7 @@ mkdir -p $HOME/.vim/bundle
 ln -sf `pwd`/vim/vimrc $HOME/.vimrc
 ln -sf `pwd`/vim/neobundle.vim $HOME/.vim/bundle/neobundle.vim
 
-touch $HOME/.zshrc_custom
+touch $HOME/.zshrc
 ln -sf `pwd`/zsh/zshenv $HOME/.zshenv
 
 ln -sf `pwd`/screen/screenrc $HOME/.screenrc
