@@ -128,8 +128,8 @@ inoremap <C-F> <Right>
 " ^MはCtrl+v,Ctrl+m
 " noremap ,h :! jshint %
 " noremap ,t :! prove -vl %
- noremap ,pt :!perltidy %
- noremap ,ptv :%!perltidy
+noremap ,pt :!perltidy %
+noremap ,ptv :'<,'>!perltidy
 " nmap <leader>b :JSBeautify
 
 " 日時の入力補助

@@ -1,5 +1,3 @@
-cd $HOME/project/dotfiles
-
 git submodule init
 git submodule foreach 'git pull origin master'
 git submodule update    
@@ -15,7 +13,7 @@ touch $HOME/.zshrc
 ln -sf `pwd`/zsh/zshenv $HOME/.zshenv
 
 ln -sf `pwd`/screen/screenrc $HOME/.screenrc
-ln -sf `pwd`/jshint/jshintrc $HOME/.jshintrc
+#ln -sf `pwd`/jshint/jshintrc $HOME/.jshintrc
 
 #ln -sf `pwd`/jslint/jslint $HOME/.jslintrc
 #~/.vim/bundle/vimproc/autoload

@@ -1,6 +1,4 @@
 source "$HOME/.zshrc"
-#source $HOME/project/dotfiles/zsh/hook.zshrc
-PATH=$HOME/script:$PATH
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH
 
