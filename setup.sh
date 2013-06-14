@@ -1,6 +1,6 @@
 git submodule init
-git submodule foreach 'git pull origin master'
 git submodule update    
+git submodule foreach 'git pull origin master'
 
 mkdir -p $HOME/.ssh
 mkdir -p $HOME/.vim/tmp
