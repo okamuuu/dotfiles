@@ -16,7 +16,7 @@ colors
 
 export PROMPT="%n%# "
 
-limit coredumpsize 102400
+limit coredumpsize 1024
 
 unsetopt promptcr
 
