@@ -1,3 +1,4 @@
+" vi 互換モードを無効にする
 set nocompatible
 
 if has('vim_starting')
@@ -25,14 +26,16 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
-
-NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'thinca/vim-quickrun'
 
 let g:quickrun_config = {}
 let g:quickrun_config['_'] = {'runner': 'vimproc'}
 
 NeoBundle 'ZenCoding.vim'
-" NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'einars/js-beautify'
 " NeoBundle 'basyura/jslint.vim'
 " NeoBundle 'scrooloose/syntastic'
 " NeoBundle 'bigfish/vim-js-beautify'
@@ -130,7 +133,7 @@ inoremap <C-F> <Right>
 " noremap ,t :! prove -vl %
 noremap ,pt :!perltidy %
 noremap ,ptv :'<,'>!perltidy
-" nmap <leader>b :JSBeautify
+map ,js :call JsBeautify()<cr>
 
 " 日時の入力補助
 :inoremap <expr> ,df strftime('%Y-%m-%dT%H:%M:%S')
@@ -181,3 +184,22 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
 
 " space + .
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
+
+" Syntastic settings
+let g:syntastic_mode_map = {
+\ "mode" : "active",
+\ "active_filetypes" : ["javascript", "json"],
+\ "passive_filetypes": [""]
+\}
+
+let g:syntastic_html_tidy_ignore_errors = [
+    \ 'trimming empty',
+    \ 'proprietary attribute "ng-show"',
+    \ 'proprietary attribute "ng-init"',
+    \ 'proprietary attribute "spin"',
+    \ 'proprietary attribute "spin-if"',
+    \ 'proprietary attribute "ng-click"',
+    \ 'proprietary attribute "ng-controller"',
+    \ 'proprietary attribute "ng-repeat"',
+    \ 'proprietary attribute "ng-app"'
+\ ]
