@@ -194,6 +194,9 @@ let g:syntastic_mode_map = {
 
 let g:syntastic_html_tidy_ignore_errors = [
     \ 'trimming empty',
+    \ 'proprietary attribute "ng-if"',
+    \ 'proprietary attribute "ng-model"',
+    \ 'proprietary attribute "ng-submit"',
     \ 'proprietary attribute "ng-show"',
     \ 'proprietary attribute "ng-init"',
     \ 'proprietary attribute "spin"',
