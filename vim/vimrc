@@ -1,4 +1,5 @@
 set nocompatible
+set backspace=2
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -31,24 +32,14 @@ NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config = {}
 let g:quickrun_config['_'] = {'runner': 'vimproc'}
 
-NeoBundle "mattn/emmet-vim"
-let g:user_zen_settings = {
-\ 'lang' : 'ja',
-\ 'html' : {
-\ 'filters' : 'html',
-\ 'indentation' : ' '
-\ },
-\ 'css' : {
-\ 'filters' : 'fc',
-\ }
-\}
-
 NeoBundle 'vim-scripts/yanktmp.vim'
 NeoBundle 'airblade/vim-gitgutter.git'
 
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'einars/js-beautify'
+
+let g:path_Beautifier_arg = '~/.jsbeautifyrc'
 
 " NeoBundle 'basyura/jslint.vim'
 " NeoBundle 'scrooloose/syntastic'
@@ -141,9 +132,9 @@ inoremap <C-F> <Right>
 " ^MはCtrl+v,Ctrl+m
 " noremap ,h :! jshint %<cr>
 " noremap ,t :! prove -vl %<cr>
-noremap ,pt :!perltidy %<cr>
+noremap ,pt  :!perltidy %<cr>
 noremap ,ptv :'<,'>!perltidy<cr>
-map ,js :call JsBeautify()<cr>
+noremap ,js  :call JsBeautify()<cr>
 
 " 日時の入力補助
 :inoremap <expr> ,df strftime('%Y-%m-%dT%H:%M:%S')
