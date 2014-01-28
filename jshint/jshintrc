@@ -74,6 +74,7 @@
     "trailing"      : false,   // Prohibit trailing whitespaces.
     "white"         : false,   // Check against strict whitespace and indentation rules.
     "globals": {
+        "Ext" : true,
         "angular": false
     }
 }
