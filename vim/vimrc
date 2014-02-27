@@ -26,28 +26,56 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
-NeoBundle 'scrooloose/syntastic'
 
-NeoBundle 'thinca/vim-quickrun'
-let g:quickrun_config = {}
-let g:quickrun_config['_'] = {'runner': 'vimproc'}
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_mode_map = {
+\ "mode" : "active",
+\ "active_filetypes" : ["javascript", "json"],
+\ "passive_filetypes": [""]
+\}
+
+let g:syntastic_html_tidy_ignore_errors = [
+    \ 'trimming empty',
+    \ '<form> lacks "action" attribute',
+    \ '<td> proprietary attribute "on"',
+    \ 'proprietary attribute "novalidate"',
+    \ 'proprietary attribute "required"',
+    \ 'proprietary attribute "ng-if"',
+    \ 'proprietary attribute "ng-switch"',
+    \ 'proprietary attribute "ng-switch-when"',
+    \ 'proprietary attribute "ng-switch-default"',
+    \ 'proprietary attribute "ng-model"',
+    \ 'proprietary attribute "ng-submit"',
+    \ 'proprietary attribute "ng-show"',
+    \ 'proprietary attribute "ng-init"',
+    \ 'proprietary attribute "spin"',
+    \ 'proprietary attribute "spin-if"',
+    \ 'proprietary attribute "ng-click"',
+    \ 'proprietary attribute "ng-controller"',
+    \ 'proprietary attribute "ng-repeat"',
+    \ 'proprietary attribute "ng-app"'
+\ ]
+
+" NeoBundle 'thinca/vim-quickrun'
+" let g:quickrun_config = {}
+" let g:quickrun_config['_'] = {'runner': 'vimproc'}
 
 NeoBundle 'vim-scripts/yanktmp.vim'
+
 NeoBundle 'airblade/vim-gitgutter.git'
+let g:gitgutter_enabled = 0
 
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'einars/js-beautify'
-
 let g:path_Beautifier_arg = '~/.jsbeautifyrc'
+
+NeoBundle 'mattn/benchvimrc-vim'
 
 " NeoBundle 'basyura/jslint.vim'
 " NeoBundle 'scrooloose/syntastic'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
-
-" PHP
-" NeoBundle 'bpearson/vim-phpcs'
 
 filetype plugin indent on
 
@@ -61,26 +89,11 @@ NeoBundleCheck
 
 syntax enable
 
-let g:Vimphpcs_Standard='PSR1'
-let g:php_cs_fixer_path = "~/project/php-qatools/bin/php-cs-fixer"
-let g:php_cs_fixer_level = "psr1"
-let g:php_cs_fixer_config = "default"           
-let g:php_cs_fixer_php_path = "php"             
-let g:php_cs_fixer_fixers_list = ""             
-let g:php_cs_fixer_enable_default_mapping = 1   
-let g:php_cs_fixer_dry_run = 0                  
-let g:php_cs_fixer_verbose = 0                  
-
-" gitgutter
-let g:gitgutter_enabled = 0
-
 " Do not make a backup before overwriting a file.
 set nobackup                      
 set nowritebackup                 
 
 set noswapfile
-" Keep swap files in one location
-" set directory=$HOME/.vim/tmp//,.  
 
 " 編集中のファイル名を表示
 " 画面の左側に常時''行番''を表示する。
@@ -145,7 +158,7 @@ noremap ,js  :call JsBeautify()<cr>
 set iskeyword+=:
 
 " コメントを見やすい色へ変更
-hi Comment cterm=bold ctermbg=black
+" hi Comment cterm=bold ctermbg=black
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -183,35 +196,7 @@ map <silent> sP :call YanktmpPaste_P()<cr>
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
-" space + .
+" press both space and . key
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 
-" Syntastic settings
-let g:syntastic_mode_map = {
-\ "mode" : "active",
-\ "active_filetypes" : ["javascript", "json"],
-\ "passive_filetypes": [""]
-\}
-
-let g:syntastic_html_tidy_ignore_errors = [
-    \ 'trimming empty',
-    \ '<form> lacks "action" attribute',
-    \ '<td> proprietary attribute "on"',
-    \ 'proprietary attribute "novalidate"',
-    \ 'proprietary attribute "required"',
-    \ 'proprietary attribute "ng-if"',
-    \ 'proprietary attribute "ng-switch"',
-    \ 'proprietary attribute "ng-switch-when"',
-    \ 'proprietary attribute "ng-switch-default"',
-    \ 'proprietary attribute "ng-model"',
-    \ 'proprietary attribute "ng-submit"',
-    \ 'proprietary attribute "ng-show"',
-    \ 'proprietary attribute "ng-init"',
-    \ 'proprietary attribute "spin"',
-    \ 'proprietary attribute "spin-if"',
-    \ 'proprietary attribute "ng-click"',
-    \ 'proprietary attribute "ng-controller"',
-    \ 'proprietary attribute "ng-repeat"',
-    \ 'proprietary attribute "ng-app"'
-\ ]
 
