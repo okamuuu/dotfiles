@@ -77,15 +77,12 @@ NeoBundle 'mattn/benchvimrc-vim'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
-<<<<<<< HEAD
 NeoBundle 'dart-lang/dart-vim-plugin'
 " NeoBundle 'thinca/vim-quickrun'
 
 " PHP
 " NeoBundle 'bpearson/vim-phpcs'
 
-=======
->>>>>>> d9b056fe6aae9549f7bb4d35e0f7a0d3d84d97e7
 filetype plugin indent on
 
 " Brief help
