@@ -66,6 +66,12 @@ setopt auto_param_slash
 
 autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
 
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
+
 #for screen hard status
 case "${TERM}" in
 kterm*|xterm*)
