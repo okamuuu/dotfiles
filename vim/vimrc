@@ -1,5 +1,5 @@
-" vi 互換モードを無効にする
 set nocompatible
+set backspace=2
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -26,30 +26,66 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
+
 NeoBundle 'scrooloose/syntastic'
+let g:syntastic_mode_map = {
+\ "mode" : "active",
+\ "active_filetypes" : ["javascript", "json"],
+\ "passive_filetypes": [""]
+\}
+
+let g:syntastic_html_tidy_ignore_errors = [
+    \ 'trimming empty',
+    \ '<form> lacks "action" attribute',
+    \ '<td> proprietary attribute "on"',
+    \ 'proprietary attribute "novalidate"',
+    \ 'proprietary attribute "required"',
+    \ 'proprietary attribute "ng-if"',
+    \ 'proprietary attribute "ng-switch"',
+    \ 'proprietary attribute "ng-switch-when"',
+    \ 'proprietary attribute "ng-switch-default"',
+    \ 'proprietary attribute "ng-model"',
+    \ 'proprietary attribute "ng-submit"',
+    \ 'proprietary attribute "ng-show"',
+    \ 'proprietary attribute "ng-init"',
+    \ 'proprietary attribute "spin"',
+    \ 'proprietary attribute "spin-if"',
+    \ 'proprietary attribute "ng-click"',
+    \ 'proprietary attribute "ng-controller"',
+    \ 'proprietary attribute "ng-repeat"',
+    \ 'proprietary attribute "ng-app"'
+\ ]
+
 " NeoBundle 'thinca/vim-quickrun'
+" let g:quickrun_config = {}
+" let g:quickrun_config['_'] = {'runner': 'vimproc'}
 
-let g:quickrun_config = {}
-let g:quickrun_config['_'] = {'runner': 'vimproc'}
+NeoBundle 'vim-scripts/yanktmp.vim'
 
-NeoBundle 'ZenCoding.vim'
+NeoBundle 'airblade/vim-gitgutter.git'
+let g:gitgutter_enabled = 0
+
 NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'einars/js-beautify'
+let g:path_Beautifier_arg = '~/.jsbeautifyrc'
+
+NeoBundle 'mattn/benchvimrc-vim'
+
 " NeoBundle 'basyura/jslint.vim'
 " NeoBundle 'scrooloose/syntastic'
-" NeoBundle 'bigfish/vim-js-beautify'
-NeoBundle 'vim-scripts/yanktmp.vim'
-NeoBundle 'airblade/vim-gitgutter.git'
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
+<<<<<<< HEAD
 NeoBundle 'dart-lang/dart-vim-plugin'
 " NeoBundle 'thinca/vim-quickrun'
 
 " PHP
 " NeoBundle 'bpearson/vim-phpcs'
 
+=======
+>>>>>>> d9b056fe6aae9549f7bb4d35e0f7a0d3d84d97e7
 filetype plugin indent on
 
 " Brief help
@@ -62,27 +98,11 @@ NeoBundleCheck
 
 syntax enable
 
-let g:Vimphpcs_Standard='PSR1'
-
-let g:php_cs_fixer_path = "~/project/php-qatools/bin/php-cs-fixer"        " define the path to the php-cs-fixer.phar
-let g:php_cs_fixer_level = "psr1"                " which level ?
-let g:php_cs_fixer_config = "default"           " configuration
-let g:php_cs_fixer_php_path = "php"             " Path to PHP
-let g:php_cs_fixer_fixers_list = ""             " List of fixers
-let g:php_cs_fixer_enable_default_mapping = 1   " Enable the mapping by default (<leader>pcd)
-let g:php_cs_fixer_dry_run = 0                  " Call command with dry-run option
-let g:php_cs_fixer_verbose = 0                  " Return the output of command if 1, else an inline information.
-
-" gitgutter
-let g:gitgutter_enabled = 0
-
-" Don't make a backup before overwriting a file.
+" Do not make a backup before overwriting a file.
 set nobackup                      
 set nowritebackup                 
 
 set noswapfile
-" Keep swap files in one location
-" set directory=$HOME/.vim/tmp//,.  
 
 " 編集中のファイル名を表示
 " 画面の左側に常時''行番''を表示する。
@@ -102,7 +122,7 @@ set list
 set listchars=tab:>-
 
 " タブが挿入された文章を編集する場合、タブの代わりに半角スペースに置き換えるようにする。
-" 行頭の余白内でTabを打ち込むと'shiftwidth'の数だけインデントする。
+" 行頭の余白内でTabを打ち込むと shiftwidth の数だけインデントする。
 set expandtab
 set smarttab
 
@@ -132,11 +152,11 @@ inoremap <C-F> <Right>
 
 " コマンドエイリアス
 " ^MはCtrl+v,Ctrl+m
-" noremap ,h :! jshint %
-" noremap ,t :! prove -vl %
-noremap ,pt :!perltidy %
-noremap ,ptv :'<,'>!perltidy
-map ,js :call JsBeautify()<cr>
+" noremap ,h :! jshint %<cr>
+" noremap ,t :! prove -vl %<cr>
+noremap ,pt  :!perltidy %<cr>
+noremap ,ptv :'<,'>!perltidy<cr>
+noremap ,js  :call JsBeautify()<cr>
 
 " 日時の入力補助
 :inoremap <expr> ,df strftime('%Y-%m-%dT%H:%M:%S')
@@ -175,9 +195,9 @@ let g:neocomplcache_min_syntax_length = 3
 " endfunction
 
 " Yanktmp 
-map <silent> sy :call YanktmpYank()
-map <silent> sp :call YanktmpPaste_p()
-map <silent> sP :call YanktmpPaste_P()
+map <silent> sy :call YanktmpYank()<cr>
+map <silent> sp :call YanktmpPaste_p()<cr>
+map <silent> sP :call YanktmpPaste_P()<cr>
 
 " Don't screw up folds when inserting text that might affect them, until
 " leaving insert mode. Foldmethod is local to the window. Protect against
@@ -185,16 +205,11 @@ map <silent> sP :call YanktmpPaste_P()
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
-" space + .
+" press both space and . key
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 
-" Syntastic settings
-let g:syntastic_mode_map = {
-\ "mode" : "active",
-\ "active_filetypes" : ["javascript", "json"],
-\ "passive_filetypes": [""]
-\}
 
+<<<<<<< HEAD
 let g:syntastic_html_tidy_ignore_errors = [
     \ 'trimming empty',
     \ '<html> proprietary attribute "class"',
@@ -210,3 +225,5 @@ let g:syntastic_html_tidy_ignore_errors = [
     \ 'proprietary attribute "ng-repeat"',
     \ 'proprietary attribute \"ng-"'
 \ ]
+=======
+>>>>>>> d9b056fe6aae9549f7bb4d35e0f7a0d3d84d97e7

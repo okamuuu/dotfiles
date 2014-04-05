@@ -75,6 +75,6 @@
     "white"         : false,   // Check against strict whitespace and indentation rules.
     "globals": {
         "angular": false,
-        "Ext": true
+        "Ext" : true
     }
 }
