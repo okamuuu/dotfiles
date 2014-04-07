@@ -206,7 +206,6 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 
 
-<<<<<<< HEAD
 let g:syntastic_html_tidy_ignore_errors = [
     \ 'trimming empty',
     \ '<html> proprietary attribute "class"',
@@ -222,5 +221,3 @@ let g:syntastic_html_tidy_ignore_errors = [
     \ 'proprietary attribute "ng-repeat"',
     \ 'proprietary attribute \"ng-"'
 \ ]
-=======
->>>>>>> d9b056fe6aae9549f7bb4d35e0f7a0d3d84d97e7
