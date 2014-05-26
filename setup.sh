@@ -1,13 +1,18 @@
 ## brew
-ruby -e '"$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/installe\)"'
-brew tap phinze/homebrew-cask
-brew install brew-cask
-brew bundle
+#ruby -e '"$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/installe\)"'
+#brew tap phinze/homebrew-cask
+#brew install brew-cask
+#brew bundle
+
+## submodules
+git submodule init
+git submodule foreach 'git pull origin master'
+git submodule update    
 
 ## vim
 mkdir -p $HOME/.vim/bundle
 ln -sf `pwd`/vim/vimrc $HOME/.vimrc
-ln -sf `pwd`/vim/neobundle.vim $HOME/.vim/bundle/neobundle.vim
+ln -sf `pwd`/submodules/neobundle.vim $HOME/.vim/bundle/neobundle.vim
 
 ## zsh
 touch $HOME/.zshrc
