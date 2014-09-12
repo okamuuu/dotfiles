@@ -34,54 +34,28 @@ let g:syntastic_mode_map = {
 \ "passive_filetypes": [""]
 \}
 
-let g:syntastic_html_tidy_ignore_errors = [
-    \ 'trimming empty',
-    \ '<form> lacks "action" attribute',
-    \ '<td> proprietary attribute "on"',
-    \ 'proprietary attribute "novalidate"',
-    \ 'proprietary attribute "required"',
-    \ 'proprietary attribute "ng-if"',
-    \ 'proprietary attribute "ng-switch"',
-    \ 'proprietary attribute "ng-switch-when"',
-    \ 'proprietary attribute "ng-switch-default"',
-    \ 'proprietary attribute "ng-model"',
-    \ 'proprietary attribute "ng-submit"',
-    \ 'proprietary attribute "ng-show"',
-    \ 'proprietary attribute "ng-init"',
-    \ 'proprietary attribute "spin"',
-    \ 'proprietary attribute "spin-if"',
-    \ 'proprietary attribute "ng-click"',
-    \ 'proprietary attribute "ng-controller"',
-    \ 'proprietary attribute "ng-repeat"',
-    \ 'proprietary attribute "ng-app"'
-\ ]
-
-" NeoBundle 'thinca/vim-quickrun'
-" let g:quickrun_config = {}
-" let g:quickrun_config['_'] = {'runner': 'vimproc'}
-
 NeoBundle 'vim-scripts/yanktmp.vim'
 
 NeoBundle 'airblade/vim-gitgutter.git'
 let g:gitgutter_enabled = 0
 
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'maksimr/vim-jsbeautify'
-NeoBundle 'einars/js-beautify'
-let g:path_Beautifier_arg = '~/.jsbeautifyrc'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'moll/vim-node'
 
 NeoBundle 'digitaltoad/vim-jade'
-
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'claco/jasmine.vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'mattn/benchvimrc-vim'
-NeoBundle "derekwyatt/vim-scala"
-NeoBundle "othree/html5.vim"
-NeoBundle "gre/play2vim"
+
+" NeoBundle 'derekwyatt/vim-scala'
+" NeoBundle 'othree/html5.vim'
+" NeoBundle 'gre/play2vim'
+
+" NeoBundle 'vim-jp/cpp-vim'
+" let g:syntastic_c_include_dirs=['/usr/local/Cellar/groonga/4.0.1/include/groonga']
 
 " NeoBundle 'basyura/jslint.vim'
-NeoBundle 'altercation/vim-colors-solarized'
+" NeoBundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 
@@ -117,6 +91,12 @@ set shiftwidth=4
 set softtabstop=4
 set list
 set listchars=tab:>-
+
+"autocmd FileType javascript setl autoindent
+"autocmd FileType javascript setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+"
+"autocmd FileType coffee setl autoindent
+"autocmd FileType coffee setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 " タブが挿入された文章を編集する場合、タブの代わりに半角スペースに置き換えるようにする。
 " 行頭の余白内でTabを打ち込むと shiftwidth の数だけインデントする。
@@ -206,19 +186,3 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 
 
-let g:syntastic_html_tidy_ignore_errors = [
-    \ 'trimming empty',
-    \ '<html> proprietary attribute "class"',
-    \ 'proprietary attribute "ng-if"',
-    \ 'proprietary attribute "ng-model"',
-    \ 'proprietary attribute "ng-submit"',
-    \ 'proprietary attribute "ng-show"',
-    \ 'proprietary attribute "ng-init"',
-    \ 'proprietary attribute "spin"',
-    \ 'proprietary attribute "spin-if"',
-    \ 'proprietary attribute "ng-click"',
-    \ 'proprietary attribute "ng-controller"',
-    \ 'proprietary attribute "ng-repeat"',
-    \ 'proprietary attribute "ng-action"',
-    \ 'proprietary attribute \"ng-"'
-\ ]
