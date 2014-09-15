@@ -1,24 +1,28 @@
-set nocompatible
-set backspace=2
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
 
 if has('vim_starting')
+  set nocompatible
+  " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+" Required:
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-if has('mac')
-  if exists('$LANG') && $LANG ==# 'ja_JP.UTF-8'
-    set langmenu=ja_ja.utf-8.macvim
-    set encoding=utf-8
-    set ambiwidth=double
-  endif
-endif
-
-filetype plugin indent off
-
 " Let NeoBundle manage NeoBundle
+" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
+
+" if has('mac')
+"   if exists('$LANG') && $LANG ==# 'ja_JP.UTF-8'
+"     set langmenu=ja_ja.utf-8.macvim
+"     set encoding=utf-8
+"     set ambiwidth=double
+"   endif
+" endif
+
+" filetype plugin indent off
 
 " Recommended to install
 " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
@@ -57,6 +61,9 @@ NeoBundle 'mattn/benchvimrc-vim'
 " NeoBundle 'basyura/jslint.vim'
 " NeoBundle 'altercation/vim-colors-solarized'
 
+call neobundle#end()
+
+" Required:
 filetype plugin indent on
 
 " Brief help
