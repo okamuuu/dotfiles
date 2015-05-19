@@ -1,0 +1,19 @@
+{
+  "env": {
+    "node" : true,
+    "browser" : true,
+    "es6": true
+  },
+  "ecmaFeatures" : {
+    "jsx": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/display-name": 1,
+    "strict" : true,
+    "no-unused-vars": [1, {"vars" : "all", "args" : "after-used"} ],
+    "no-comma-dangle" : false
+  }
+}
