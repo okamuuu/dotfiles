@@ -21,4 +21,9 @@ ln -sf `pwd`/zsh/zshenv $HOME/.zshenv
 ## screen
 ln -sf `pwd`/screen/screenrc $HOME/.screenrc
 
+## eslint
+ln -sf `pwd`/eslint/eslintrc $HOME/.eslintrc
+
+
+
 
