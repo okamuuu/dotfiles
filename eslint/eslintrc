@@ -14,6 +14,7 @@
     "react/display-name": 1,
     "strict" : true,
     "no-unused-vars": [1, {"vars" : "all", "args" : "after-used"} ],
-    "no-comma-dangle" : false
+    "no-comma-dangle" : false,
+    "quotes": 0
   }
 }
