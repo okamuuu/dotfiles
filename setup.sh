@@ -23,7 +23,9 @@ ln -sf `pwd`/screen/screenrc $HOME/.screenrc
 
 ## eslint
 ln -sf `pwd`/eslint/eslintrc $HOME/.eslintrc
+ln -sf `pwd`/eslint/eslintignore $HOME/.eslintignore
 
-
+# npm install eslint -g
+# npm install eslint-plugin-react -g
 
 

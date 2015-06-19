@@ -57,6 +57,8 @@ map <silent> sp :call YanktmpPaste_p()<cr>
 map <silent> sP :call YanktmpPaste_P()<cr>
 
 NeoBundle 'mattn/benchvimrc-vim'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'fatih/vim-go'
 
 filetype plugin indent on
 

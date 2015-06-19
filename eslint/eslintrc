@@ -1,20 +1,24 @@
 {
   "env": {
     "node" : true,
-    "browser" : true,
-    "es6": true
+    "browser" : true
   },
   "ecmaFeatures" : {
-    "jsx": true
+    "jsx": true,
+    "objectLiteralShorthandMethods" : true
   },
   "plugins": [
     "react"
   ],
   "rules": {
     "react/display-name": 1,
-    "strict" : true,
+    "semi" : [2 , "never"],
+    "strict" : false,
+    "key-spacing" : [2, {
+      "beforeColon" : true,
+      "afterColon" : false,
+    }],
     "no-unused-vars": [1, {"vars" : "all", "args" : "after-used"} ],
-    "no-comma-dangle" : false,
-    "quotes": 0
+    "no-comma-dangle" : false
   }
 }
