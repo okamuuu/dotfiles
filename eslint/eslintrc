@@ -1,18 +1,17 @@
 {
   "env": {
+    "es6": true,
     "node" : true,
     "browser" : true
   },
   "ecmaFeatures" : {
-    "jsx": true,
-    "objectLiteralShorthandMethods" : true
+    "jsx": true
   },
   "plugins": [
     "react"
   ],
   "rules": {
     "react/display-name": 1,
-    "semi" : [2 , "never"],
     "strict" : 1,
     "key-spacing" : [2, {
       "beforeColon" : false,
