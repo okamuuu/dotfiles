@@ -13,12 +13,12 @@
   "rules": {
     "react/display-name": 1,
     "semi" : [2 , "never"],
-    "strict" : false,
+    "strict" : 1,
     "key-spacing" : [2, {
-      "beforeColon" : true,
-      "afterColon" : false,
+      "beforeColon" : false,
+      "afterColon" : true,
     }],
     "no-unused-vars": [1, {"vars" : "all", "args" : "after-used"} ],
-    "no-comma-dangle" : false
+    "no-comma-dangle" : 1
   }
 }
