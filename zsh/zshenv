@@ -7,7 +7,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 
 autoload -U compinit
-compinit
+compinit -u
 
 autoload -U colors
 colors
