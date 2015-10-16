@@ -12,7 +12,7 @@ git submodule update
 ## vim
 mkdir -p $HOME/.vim/bundle
 ln -sf `pwd`/vim/vimrc $HOME/.vimrc
-ln -sf `pwd`/submodules/neobundle.vim $HOME/.vim/bundle/neobundle.vim
+ln -sf `pwd`/submodules/neobundle.vim/ $HOME/.vim/bundle/neobundle.vim/
 
 ## zsh
 touch $HOME/.zshrc
