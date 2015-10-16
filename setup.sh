@@ -13,7 +13,7 @@ git submodule update
 mkdir -p $HOME/.vim/bundle
 ln -sf `pwd`/vim/vimrc $HOME/.vimrc
 if [ ! -e $HOME/.vim/bundle/neobundle.vim ]; then
-    ln -sf `pwd`/submodules/ $HOME/.vim/bundle/neobundle.vim
+    ln -sf `pwd`/submodules/neobundle.vim $HOME/.vim/bundle/neobundle.vim
 fi
 
 ## zsh
