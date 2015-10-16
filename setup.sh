@@ -21,4 +21,7 @@ ln -sf `pwd`/zsh/zshenv $HOME/.zshenv
 ## screen
 ln -sf `pwd`/screen/screenrc $HOME/.screenrc
 
+## peco
+touch $HOME/.config
+ln -sf `pwd`/config/peco  $HOME/.config/peco
 

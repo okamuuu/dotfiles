@@ -88,6 +88,7 @@ NeoBundle 'fatih/vim-go'
 
 " NeoBundle 'basyura/jslint.vim'
 " NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'mxw/vim-jsx'
 
 filetype plugin indent on
 
