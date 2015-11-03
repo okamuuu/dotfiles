@@ -135,3 +135,14 @@ export SSH_AUTH_SOCK=$(launchctl getenv SSH_AUTH_SOCK)
 
 bindkey -d
 bindkey -e
+
+function peco-src () {
+  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^]' peco-src
