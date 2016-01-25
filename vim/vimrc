@@ -25,7 +25,7 @@ endif
 NeoBundle 'Shougo/neocomplete'
 
 NeoBundle 'scrooloose/syntastic'
-let g:syntastic_mode_map = { 
+let g:syntastic_mode_map = {
 \'mode': 'passive',
 \'active_filetypes': ["coffee", "javascript", "json", "go"]
 \ }
@@ -41,6 +41,7 @@ map <silent> sP :call YanktmpPaste_P()<cr>
 NeoBundle 'mattn/benchvimrc-vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'editorconfig/editorconfig-vim'
 
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'https://github.com/leafgarland/typescript-vim.git'
@@ -69,8 +70,8 @@ NeoBundleCheck
 syntax enable
 
 " Do not make a backup before overwriting a file.
-set nobackup                      
-set nowritebackup                 
+set nobackup
+set nowritebackup
 
 set noswapfile
 
@@ -86,7 +87,7 @@ set ruler
 " 自身がタブを入力時した際に、タブの代わりに4文字の半角スペースに置き換える
 " タブを発見した場合は印つける
 set tabstop=4
-set shiftwidth=4 
+set shiftwidth=4
 set softtabstop=4
 set list
 set listchars=tab:>-
