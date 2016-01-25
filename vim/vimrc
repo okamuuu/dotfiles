@@ -8,13 +8,11 @@ if has('vim_starting')
 endif
 
 " Required:
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
-
-call neobundle#end()
 
 if has('mac')
   if exists('$LANG') && $LANG ==# 'ja_JP.UTF-8'
@@ -43,6 +41,12 @@ map <silent> sP :call YanktmpPaste_P()<cr>
 NeoBundle 'mattn/benchvimrc-vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'fatih/vim-go'
+
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'https://github.com/leafgarland/typescript-vim.git'
+NeoBundle 'https://github.com/clausreinke/typescript-tools.git'
+
+call neobundle#end()
 
 " NeoBundle 'derekwyatt/vim-scala'
 " NeoBundle 'othree/html5.vim'
@@ -91,6 +95,7 @@ set listchars=tab:>-
 autocmd FileType coffee setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 autocmd FileType javascript setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 autocmd FileType json setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+autocmd FileType yaml setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 " タブが挿入された文章を編集する場合、タブの代わりに半角スペースに置き換えるようにする。
 " 行頭の余白内でTabを打ち込むと shiftwidth の数だけインデントする。
