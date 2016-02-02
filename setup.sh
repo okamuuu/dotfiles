@@ -16,3 +16,6 @@ ln -sf `pwd`/zsh/zshenv $HOME/.zshenv
 
 ## screen
 ln -sf `pwd`/screen/screenrc $HOME/.screenrc
+
+## editoconfig
+ln -sf `pwd`/editorconfig/editorconfig $HOME/.editorconfig

@@ -43,7 +43,6 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'editorconfig/editorconfig-vim'
 
-NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'https://github.com/leafgarland/typescript-vim.git'
 NeoBundle 'https://github.com/clausreinke/typescript-tools.vim'
 
