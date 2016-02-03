@@ -27,11 +27,12 @@ NeoBundle 'Shougo/neocomplete'
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_mode_map = {
 \'mode': 'passive',
-\'active_filetypes': ["coffee", "javascript", "json", "go"]
+\'active_filetypes': ["typescript", "coffee", "javascript", "json", "go"]
 \ }
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_go_checkers = ['golint']
 let g:syntastic_python_checkers = ['pep8']
+let g:syntastic_typescript_checkers = ['tslint']
 
 NeoBundle 'vim-scripts/yanktmp.vim'
 map <silent> sy :call YanktmpYank()<cr>
