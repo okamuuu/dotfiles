@@ -124,11 +124,13 @@ inoremap <C-F> <Right>
 
 " コマンドエイリアス
 " ^MはCtrl+v,Ctrl+m
+noremap ,ts :! ts-node %<cr>
+noremap ,t  :! mocha --require ts-node/register %<cr>
 " noremap ,h :! jshint %<cr>
 " noremap ,t :! prove -vl %<cr>
-noremap ,pt  :!perltidy %<cr>
-noremap ,ptv :'<,'>!perltidy<cr>
-noremap ,js  :call JsBeautify()<cr>
+" noremap ,pt  :!perltidy %<cr>
+" noremap ,ptv :'<,'>!perltidy<cr>
+" noremap ,js  :call JsBeautify()<cr>
 
 " 日時の入力補助
 :inoremap <expr> ,df strftime('%Y-%m-%dT%H:%M:%S')
