@@ -24,6 +24,7 @@ endif
 
 NeoBundle 'Shougo/neocomplete'
 
+NeoBundle 'moll/vim-node'
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_mode_map = {
 \'mode': 'passive',
@@ -45,7 +46,15 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'editorconfig/editorconfig-vim'
 
 NeoBundle 'https://github.com/leafgarland/typescript-vim.git'
-NeoBundle 'https://github.com/clausreinke/typescript-tools.vim'
+NeoBundleLazy 'clausreinke/typescript-tools.vim', {
+\ 'build' : 'npm install -g',
+\ 'autoload' : {
+\   'filetypes' : ['typescript'] }
+\}
+
+if exists('*TSScompleteFunc') && &omnifunc ==# ''
+  setlocal omnifunc=TSScompleteFunc
+endif
 
 call neobundle#end()
 
