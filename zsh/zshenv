@@ -81,8 +81,8 @@ screen*|ansi*)
     preexec() {
         local -a cmd; cmd=(${(z)2})
         if test $cmd[2]; then
-            # printf '\ek$(basename $cmd[2])\e\\'
-            printf "\ek!$1\e\\"
+            # printf "\ek$(basename $cmd[2])\e\\"
+            print "\ek!$1\e\\"
         fi
     }
     precmd() {
@@ -107,11 +107,11 @@ function rprompt-git-current-branch {
         action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
 
         # for virtual machine
-        if [[ -n `whoami | grep "vagrant"` ]]; then 
+        if [[ -n `whoami | grep "vagrant"` ]]; then
             color=%F{white}
             echo "$color$name$action%f%b "
             return
-        fi  
+        fi
 
         st=`git status 2> /dev/null`
         if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
@@ -123,7 +123,7 @@ function rprompt-git-current-branch {
         else
                  color=%F{red}
         fi
-              
+
         echo "$color$name$action%f%b "
 }
 
