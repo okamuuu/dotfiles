@@ -30,11 +30,8 @@ call dein#add('Shougo/dein.vim')
 call dein#add('scrooloose/syntastic')
 call dein#add('Shougo/neocomplete')
 call dein#add('moll/vim-node')
-call dein#add('leafgarland/typescript-vim')
 call dein#add('vim-scripts/yanktmp.vim')
-call dein#add('elixir-lang/vim-elixir')
 call dein#add('editorconfig/editorconfig-vim')
-call dein#add('elixir-lang/vim-elixir')
 call dein#add('fatih/vim-go')
 
 call dein#end()
@@ -47,8 +44,7 @@ let g:syntastic_mode_map = {
 \'mode': 'passive',
 \'active_filetypes': ["typescript", "javascript", "json"]
 \ }
-let g:syntastic_typescript_checkers = ['tslint']
-" let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 map <silent> sy :call YanktmpYank()<cr>
 map <silent> sp :call YanktmpPaste_p()<cr>
