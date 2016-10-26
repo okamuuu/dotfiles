@@ -34,6 +34,8 @@ call dein#add('leafgarland/typescript-vim')
 call dein#add('vim-scripts/yanktmp.vim')
 call dein#add('elixir-lang/vim-elixir')
 call dein#add('editorconfig/editorconfig-vim')
+call dein#add('elixir-lang/vim-elixir')
+call dein#add('fatih/vim-go')
 
 call dein#end()
 
@@ -84,7 +86,7 @@ set list
 set listchars=tab:>-
 
 "autocmd FileType coffee, javascript and json setl autoindent
-autocmd FileType coffee setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+autocmd FileType go setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
 autocmd FileType javascript setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 autocmd FileType json setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 autocmd FileType yaml setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
@@ -94,7 +96,6 @@ autocmd FileType yaml setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 set expandtab
 set smarttab
 
-" インクリメンタルサーチ
 set incsearch
 
 " 対括弧の表示
