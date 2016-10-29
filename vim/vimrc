@@ -45,6 +45,7 @@ let g:syntastic_mode_map = {
 \'active_filetypes': ["typescript", "javascript", "json"]
 \ }
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_go_checkers = ['golint']
 
 map <silent> sy :call YanktmpYank()<cr>
 map <silent> sp :call YanktmpPaste_p()<cr>
@@ -86,6 +87,10 @@ autocmd FileType go setl tabstop=4 expandtab shiftwidth=4 softtabstop=4
 autocmd FileType javascript setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 autocmd FileType json setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
 autocmd FileType yaml setl tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+" err を Highlight
+autocmd FileType go :highlight goErr cterm=bold ctermfg=214
+autocmd FileType go :match goErr /\<err\>/
 
 " タブが挿入された文章を編集する場合、タブの代わりに半角スペースに置き換えるようにする。
 " 行頭の余白内でTabを打ち込むと shiftwidth の数だけインデントする。
@@ -138,3 +143,7 @@ set iskeyword+=:
 nnoremap <Space>. :<C-u>tabedit $MYVIMRC<CR>
 
 set backspace=indent,eol,start
+
+if $TERM == 'screen'
+  set t_Co=256
+endif
