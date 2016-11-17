@@ -2,6 +2,7 @@
 mkdir -p $HOME/.vim/bundle
 ln -sf `pwd`/editorconfig/editorconfig $HOME/.editorconfig
 ln -s /usr/local/bin/vim /usr/local/bin/vi
+ln -sf `pwd`/vim/vimrc $HOME/.vimrc
 
 ## zsh
 touch $HOME/.zshrc
