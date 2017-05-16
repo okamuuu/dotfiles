@@ -29,6 +29,10 @@ call dein#begin(s:dein_dir)
 call dein#add('Shougo/dein.vim')
 call dein#add('scrooloose/syntastic')
 call dein#add('Shougo/neocomplete')
+call dein#add('pangloss/vim-javascript')
+call dein#add('mxw/vim-jsx')
+call dein#add('leafgarland/typescript-vim')
+call dein#add('burnettk/vim-angular')
 call dein#add('moll/vim-node')
 call dein#add('vim-scripts/yanktmp.vim')
 call dein#add('editorconfig/editorconfig-vim')
@@ -40,6 +44,7 @@ if dein#check_install()
   call dein#install()
 endif
 
+let g:jsx_ext_required = 0
 let g:syntastic_mode_map = {
 \'mode': 'passive',
 \'active_filetypes': ["typescript", "javascript", "json"]
