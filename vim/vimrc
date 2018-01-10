@@ -37,6 +37,8 @@ call dein#add('moll/vim-node')
 call dein#add('vim-scripts/yanktmp.vim')
 call dein#add('editorconfig/editorconfig-vim')
 call dein#add('fatih/vim-go')
+call dein#add('styled-components/vim-styled-components')
+call dein#add('tomlion/vim-solidity')
 
 call dein#end()
 
@@ -50,6 +52,7 @@ let g:syntastic_mode_map = {
 \'active_filetypes': ["typescript", "javascript", "json"]
 \ }
 let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_go_checkers = ['golint']
 
 map <silent> sy :call YanktmpYank()<cr>
